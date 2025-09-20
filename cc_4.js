@@ -3,11 +3,11 @@
 // Code goes here
 
 let products = [
-    {sku: '001', name: 'Headphones', category: 'electronics', price: 79.99, inventory: 56},
-    {sku: '002', name: 'Running Shorts', category: 'apparel', price: 29.99, inventory: 77},
-    {sku: '003', name: 'Ranch', category: 'groceries', price: 9.99, inventory: 102},
-    {sku: '004', name: 'Toilet Paper', category: 'groceries', price: 4.99, inventory: 343},
-    {sku: '005', name: 'Drill Bits', category: 'default', price: 49.99, inventory: 96},
+    {sku: 101, name: 'Headphones', category: 'electronics', price: 79.99, inventory: 56},
+    {sku: 102, name: 'Running Shorts', category: 'apparel', price: 29.99, inventory: 77},
+    {sku: 103, name: 'Ranch', category: 'groceries', price: 9.99, inventory: 102},
+    {sku: 104, name: 'Toilet Paper', category: 'groceries', price: 4.99, inventory: 343},
+    {sku: 105, name: 'Drill Bits', category: 'default', price: 49.99, inventory: 96},
 ];
 
 for (let product of products) {
@@ -32,12 +32,12 @@ for (let product of products) {
 };
 
 console.log(products);
-
-const customers = [
-    {id: 1, customerType: "regular", couponCode: "SAVE10", taxRate: 0.085, cart: [{sku: 001, qty: 1}, {sku: 004, qty: 2}]},
-    {id: 2, customerType: "student", couponCode: "FREESHIP", taxRate: 0.085, cart: [{sku: 002, qty: 2}, {sku: 003, qty: 2}]},
-    {id: 3, customerType: "senior", couponCode: "", taxRate: 0.085, cart: [{sku: 004, qty: 3}, {sku: 005, qty: 3}]},
-];
+let customerType = ["regular", "senior", "student"];
+//const customers = [
+//    {id: 1, customerType: "regular", couponCode: "SAVE10", taxRate: 0.085, cart: [{sku: 101, qty: 1}, {sku: 104, qty: 2}]},
+//    {id: 2, customerType: "student", couponCode: "FREESHIP", taxRate: 0.085, cart: [{sku: 102, qty: 2}, {sku: 103, qty: 2}]},
+//    {id: 3, customerType: "senior", couponCode: "", taxRate: 0.085, cart: [{sku: 104, qty: 3}, {sku: 105, qty: 3}]},
+//];
 
 let extraDiscount = 0
 if (customerType === "student") { extraDiscount = 0.05; }
@@ -53,4 +53,8 @@ for (let i = 1; i <= 3; i = i + 1) {
             item.inventory--;
         }
     }
+    let finalTotal = subtotal * (1 - extraDiscount);
+    console.log(`Customer ${i}: $${finalTotal.toFixed(2)}`);
+
 }
+console.log(products);

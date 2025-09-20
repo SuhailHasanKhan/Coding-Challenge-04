@@ -32,3 +32,9 @@ for (let product of products) {
 };
 
 console.log(products);
+
+const customers = [
+    {id: 1, customerType: "regular", couponCode: "SAVE10", taxRate: 0.085, cart: [{sku: 001, qty: 1}, {sku: 004, qty: 2}]},
+    {id: 2, customerType: "student", couponCode: "FREESHIP", taxRate: 0.085, cart: [{sku: 002, qty: 2}, {sku: 003, qty: 2}]},
+    {id: 3, customerType: "senior", couponCode: "", taxRate: 0.085, cart: [{sku: 004, qty: 3}, {sku: 005, qty: 3}]},
+];

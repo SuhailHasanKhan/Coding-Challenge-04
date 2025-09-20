@@ -38,3 +38,8 @@ const customers = [
     {id: 2, customerType: "student", couponCode: "FREESHIP", taxRate: 0.085, cart: [{sku: 002, qty: 2}, {sku: 003, qty: 2}]},
     {id: 3, customerType: "senior", couponCode: "", taxRate: 0.085, cart: [{sku: 004, qty: 3}, {sku: 005, qty: 3}]},
 ];
+
+let extraDiscount = 0
+if (customerType === "student") { extraDiscount = 0.05; }
+else if (customerType === "senior") { extraDiscount = 0.07; }
+else { extraDiscount = 0; }

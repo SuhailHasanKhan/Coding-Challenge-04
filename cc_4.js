@@ -43,3 +43,14 @@ let extraDiscount = 0
 if (customerType === "student") { extraDiscount = 0.05; }
 else if (customerType === "senior") { extraDiscount = 0.07; }
 else { extraDiscount = 0; }
+
+for (let i = 1; i <= 3; i = i + 1) {
+    let subtotal = 0;
+
+    for (const item of products) {
+        subtotal = subtotal + item.promoPrice;
+        if (item.inventory > 0) {
+            item.inventory--;
+        }
+    }
+}

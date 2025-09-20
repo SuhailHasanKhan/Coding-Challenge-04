@@ -32,7 +32,7 @@ for (let product of products) {
 };
 
 console.log(products);
-let customerType = ["regular", "senior", "student"];
+let customerType = "student";
 //const customers = [
 //    {id: 1, customerType: "regular", couponCode: "SAVE10", taxRate: 0.085, cart: [{sku: 101, qty: 1}, {sku: 104, qty: 2}]},
 //    {id: 2, customerType: "student", couponCode: "FREESHIP", taxRate: 0.085, cart: [{sku: 102, qty: 2}, {sku: 103, qty: 2}]},
@@ -44,6 +44,7 @@ if (customerType === "student") { extraDiscount = 0.05; }
 else if (customerType === "senior") { extraDiscount = 0.07; }
 else { extraDiscount = 0; }
 
+console.log("------- Final Total Prices --------");
 for (let i = 1; i <= 3; i = i + 1) {
     let subtotal = 0;
 
@@ -57,4 +58,8 @@ for (let i = 1; i <= 3; i = i + 1) {
     console.log(`Customer ${i}: $${finalTotal.toFixed(2)}`);
 
 }
-console.log(products);
+console.log("------- Electronic Product Details --------");
+const electronicProduct = products[0];
+for (const details in electronicProduct) {
+    console.log(`${details}: ${electronicProduct[details]}`);
+}
